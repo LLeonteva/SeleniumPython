@@ -6,7 +6,7 @@ def browser_init(context):
     :param context: Behave context
     :param url: root url of the pages
     """
-    context.driver = webdriver.Chrome()
+    context.driver = webdriver.Chrome('drivers/chromedriver')
     # context.browser = webdriver.Safari()
     # context.browser = webdriver.Firefox()
 

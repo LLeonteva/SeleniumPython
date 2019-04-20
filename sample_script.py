@@ -7,6 +7,7 @@ driver = webdriver.Chrome('drivers/chromedriver')
 
 # open the url
 driver.get('https://www.google.com/')
+driver.maximize_window()
 
 search = driver.find_element(By.NAME, 'q')
 search.clear()

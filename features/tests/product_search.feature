@@ -1,4 +1,4 @@
-# Created by Svetlana at 4/4/19
+# Created by Liudmila at 04/22/19
 Feature: Test Scenarios for Search functionality
 
   Scenario: User can search for a product
@@ -7,3 +7,10 @@ Feature: Test Scenarios for Search functionality
     And Click on search icon
     Then Product results for dress are shown
     And First result contains dress
+
+  Scenario: User can search for a product on Amazon
+    Given Open Amazon page
+    When Input phone into Amazon search field
+    And Click on Amazon search icon
+    Then Amazon product results for phone are shown
+    And Amazon first result contains phone

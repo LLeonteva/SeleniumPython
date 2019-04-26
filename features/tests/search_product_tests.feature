@@ -14,3 +14,9 @@ Feature: Test Scenarios for Search functionality
     And Click on Amazon search icon
     Then Amazon product results for phone are shown
     And Amazon first result contains phone
+
+  Scenario: User can see more then 5 items upon search
+    Given Open Amazon page
+    When Input hat into Amazon search field
+    And Click on Amazon search icon
+    Then Verify more then 5 items are displayed

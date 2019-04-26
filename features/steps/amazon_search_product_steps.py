@@ -7,6 +7,7 @@ SEARCH_ICON = (By.XPATH, "//input[@type='submit' and @class='nav-input']")
 RESULTS_INFO_BAR = (By.XPATH, "//span[@class='a-color-state a-text-bold']")
 # RESULTS_INFO_BAR = (By.XPATH, "//span[@data-component-type='s-result-info-bar']/div") # wrong xpath
 SEARCH_FIRST_RESULT = (By.XPATH, "//div[@class='textContainer']")
+SEARCHED_ITEMS = (By.CSS_SELECTOR, "div[data-cel-widget*='search_result555555']")
 
 
 @given('Open Amazon page')
@@ -41,3 +42,14 @@ def verify_fount_first_result(context, search_world):
     assert search_world in first_result, \
         "Expected word '{}' in message, but got '{}' ".format(search_world, first_result)
 
+
+@then("Verify more then 5 items are displayed")
+def verify(context):
+    items = context.driver.find_elements(*SEARCHED_ITEMS)
+    print(items)
+    actual_items = len(items)
+    print(actual_items)
+    expected_items = 5
+    print(expected_items)
+    assert actual_items > expected_items, \
+        "Expected items of search results is '{}', but got '{}' ".format(expected_items, actual_items)

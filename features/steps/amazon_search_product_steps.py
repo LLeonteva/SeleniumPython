@@ -7,7 +7,7 @@ SEARCH_ICON = (By.XPATH, "//input[@type='submit' and @class='nav-input']")
 RESULTS_INFO_BAR = (By.XPATH, "//span[@class='a-color-state a-text-bold']")
 # RESULTS_INFO_BAR = (By.XPATH, "//span[@data-component-type='s-result-info-bar']/div") # wrong xpath
 SEARCH_FIRST_RESULT = (By.XPATH, "//div[@class='textContainer']")
-SEARCHED_ITEMS = (By.CSS_SELECTOR, "div[data-cel-widget*='search_result555555']")
+SEARCHED_ITEMS = (By.CSS_SELECTOR, "div[data-cel-widget*='search_result']")
 
 
 @given('Open Amazon page')

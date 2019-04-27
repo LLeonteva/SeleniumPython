@@ -1,6 +1,5 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
-from time import sleep
 
 
 HELP_SEARCH_INPUT = (By.ID, "helpsearch")
@@ -13,7 +12,6 @@ def input_search(context, search_phrase):
     search = context.driver.find_element(*HELP_SEARCH_INPUT)
     search.clear()
     search.send_keys(search_phrase)
-    sleep(4)
 
 
 @when('Click Go button')

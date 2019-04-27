@@ -18,6 +18,7 @@ search.clear()
 search.send_keys(SEARCH_WORLD)
 
 # wait for 4 sec from time library from Python, better to use wait from Selenium later
+# Google specific, don't need for Amazon website
 sleep(4)
 
 # click search

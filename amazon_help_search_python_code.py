@@ -25,9 +25,6 @@ search = driver.find_element(*HELP_SEARCH_FIELD)
 search.clear()
 search.send_keys(SEARCH_TEXT)
 
-# wait for 4 sec from time library from Python, better to use wait from Selenium later
-sleep(4)
-
 # click Go
 driver.find_element(*HELP_SEARCH_GO).click()
 

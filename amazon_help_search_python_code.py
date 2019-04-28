@@ -1,7 +1,6 @@
 # User can search for solutions of Cancelling an order on Amazon
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from time import sleep
 
 HELP_SEARCH_LINK = (By.XPATH, "//a[contains(@href, 'ref_=nav_cs_help')]")
 HELP_SEARCH_FIELD = (By.ID, "helpsearch")

@@ -18,6 +18,6 @@ Feature: HW1: Amazon tests
     Given Open Amazon page
     When Click on Hamburger menu icon on the left
     Then Verify ‘Shop by category’ text is present
-    When Click on closing X of the menu
+    When Click on closing X of the side menu
     When Click on ‘Try Prime’ from Amazon logo
     Then Amazon Prime page is opened

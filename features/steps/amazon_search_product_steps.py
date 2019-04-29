@@ -9,11 +9,6 @@ SEARCH_FIRST_RESULT = (By.XPATH, "//span[@class='a-size-medium a-color-base a-te
 SEARCHED_ITEMS = (By.CSS_SELECTOR, "div[data-cel-widget*='search_result']")
 
 
-@given('Open Amazon page')
-def open_amazon(context):
-    context.driver.get('https://www.amazon.com')
-
-
 @when('Input {search_word} into Amazon search field')
 def input_search(context, search_word):
     search = context.driver.find_element(*SEARCH_INPUT)

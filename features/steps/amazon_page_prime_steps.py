@@ -23,4 +23,5 @@ def verify_benefits_card_presented(context):
     actual_cards = len(cards)
     print("Actual amount of cards: ", actual_cards)
     expected_cards = 4
-    assert actual_cards == expected_cards, "Expected benefits cards '{}', but got '{}' ".format(expected_cards, actual_cards)
+    assert actual_cards == expected_cards, \
+        "Expected benefits cards '{}', but got '{}' ".format(expected_cards, actual_cards)

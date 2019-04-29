@@ -10,3 +10,9 @@ Feature: HW1: Amazon tests
     Given Open Amazon page
     When Click on ‘Ad feedback’ link
     Then Ad feedback form is opened
+
+  Scenario: An item can be added to the cart
+    Given Open page for product B07PPN4DZ2
+    When Click Add to cart button
+    Then Label 'Added to card' is present
+    And Item has been added to the cart

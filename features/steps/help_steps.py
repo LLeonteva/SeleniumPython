@@ -22,4 +22,4 @@ def click_go_btn(context):
 @then('Result contains {expected_result}')
 def verify_help_search_result(context, expected_result):
     assert expected_result in context.driver.find_element(*SEARCH_RESULT_HEADER).text
-  # assert expected_result == context.driver.find_element(*SEARCH_RESULT_HEADER).text
+    # assert expected_result == context.driver.find_element(*SEARCH_RESULT_HEADER).text

@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 NAVIG_LINK_HELP = (By.XPATH, "//a[contains(@href, 'ref_=nav_cs_help')]")
 NAVIG_LINK_ORDERS = (By.ID, "nav-orders")
+NAVIG_LINK_ACCOUNTS_AND_LISTS = (By.CSS_SELECTOR, "a#nav-link-accountList")
 
 HAMBURGER_MENU = (By.XPATH, "//i[@class='hm-icon nav-sprite']")
 SHOP_BY_CATEGORY_HEADER = (By.XPATH, "//ul[@class='hmenu  hmenu-visible']/li[1]/div[@class='hmenu-item hmenu-title']")
@@ -63,5 +64,9 @@ def click_on_ad_feedback_link(context):
     context.driver.find_element(*AD_FEEDBACK_LINK).click()
 
 
+@when("Click on Accounts and Lists navigation link")
+def click_account_and_list_navig_link(context):
+    context.driver.wait.until(EC.element_to_be_clickable(NAVIG_LINK_ACCOUNTS_AND_LISTS))
+    context.driver.find_element(*NAVIG_LINK_ACCOUNTS_AND_LISTS).click()
 
 

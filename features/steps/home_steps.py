@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 NAVIG_LINK_HELP = (By.XPATH, "//a[contains(@href, 'ref_=nav_cs_help')]")
 NAVIG_LINK_ORDERS = (By.ID, "nav-orders")
 NAVIG_LINK_ACCOUNTS_AND_LISTS = (By.CSS_SELECTOR, "a#nav-link-accountList")
+NAVIG_LINK_CART = (By.ID, "nav-cart")
 
 HAMBURGER_MENU = (By.XPATH, "//i[@class='hm-icon nav-sprite']")
 SHOP_BY_CATEGORY_HEADER = (By.XPATH, "//ul[@class='hmenu  hmenu-visible']/li[1]/div[@class='hmenu-item hmenu-title']")
@@ -13,6 +14,8 @@ HAMBURGER_MENU_X = (By.XPATH, "//div[@class='nav-sprite hmenu-close-icon']")
 # LOGO_TRY_PRIME_LINK = (By.XPATH, "//a[@class='nav-sprite nav-logo-tagline nav-prime-try']")
 LOGO_TRY_PRIME_LINK = (By.XPATH, "//div[@id='nav-logo']/a[contains(@href, 'prime')]")
 AD_FEEDBACK_LINK = (By.CSS_SELECTOR, "span#ad-feedback-text-right-7")
+
+
 
 
 @given('Open Amazon page')
@@ -70,3 +73,6 @@ def click_account_and_list_navig_link(context):
     context.driver.find_element(*NAVIG_LINK_ACCOUNTS_AND_LISTS).click()
 
 
+@when("Click on Cart icon")
+def click_navig_cart_icon(context):
+    context.driver.find_element(*NAVIG_LINK_CART).click()

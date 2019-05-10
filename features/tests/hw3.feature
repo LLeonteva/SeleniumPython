@@ -1,6 +1,5 @@
 # Created by lleonteva at 2019-05-08
 Feature: HW3. Amazon tests
-  # Enter feature description here
 
   Scenario: User can open registration page in Amazon
     Given Open Amazon page
@@ -8,3 +7,9 @@ Feature: HW3. Amazon tests
     Then Sign in page is opened
     When Click on 'Create your Amazon Account' button
     Then Sign up page is opened
+
+
+  Scenario: 'Your Shopping Cart is empty' shown if no product added
+    Given Open Amazon page
+    When Click on Cart icon
+    Then Verify 'Your Shopping Cart is empty.' is presented

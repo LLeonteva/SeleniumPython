@@ -8,6 +8,7 @@ def browser_init(context):
     :param url: root url of the pages
     """
     context.driver = webdriver.Chrome('drivers/chromedriver')
+    context.url = 'https://www.amazon.com'
     # context.browser = webdriver.Safari()
     # context.browser = webdriver.Firefox()
 

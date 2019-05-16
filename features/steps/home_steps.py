@@ -16,16 +16,19 @@ LOGO_TRY_PRIME_LINK = (By.XPATH, "//div[@id='nav-logo']/a[contains(@href, 'prime
 AD_FEEDBACK_LINK = (By.CSS_SELECTOR, "span#ad-feedback-text-right-7")
 
 
-
-
-@given('Open Amazon page')
+@given("Open Amazon page")
 def open_amazon(context):
-    context.driver.get('https://www.amazon.com')
+    context.driver.get(context.url)
+
+
+@given("Open Amazon {url} page")
+def open_amazon(context, url):
+    context.driver.get(context.url + url)
 
 
 @given("Open page for product {product_id}")
 def open_product_page(context, product_id):
-    context.driver.get("https://www.amazon.com/dp/{}".format(product_id))
+    context.driver.get("{}/dp/{}".format(context.url, product_id))
 
 
 @when("Click on Help navigation link")

@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
 from selenium.webdriver.support import expected_conditions as EC
+from time import sleep
 
 
 NAVIG_LINK_HELP = (By.XPATH, "//a[contains(@href, 'ref_=nav_cs_help')]")
@@ -24,6 +25,7 @@ def open_amazon(context):
 @given("Open Amazon {url} page")
 def open_amazon(context, url):
     context.driver.get(context.url + url)
+    sleep(2)
 
 
 @given("Open page for product {product_id}")

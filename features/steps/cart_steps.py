@@ -10,4 +10,4 @@ CARD_EMPTY_HEADER = (By.CSS_SELECTOR, "div.a-row.sc-cart-header")
 def verify_card_empty_header_presented(context, expected_text):
     context.driver.wait.until(EC.presence_of_element_located(CARD_EMPTY_HEADER))
     actual_text = context.driver.find_element(*CARD_EMPTY_HEADER).text
-    assert expected_text == actual_text
+    assert expected_text == actual_text, "Expected text is {}, but the actual text is {}".format(expected_text, actual_text)

@@ -9,7 +9,9 @@ NAVIG_LINK_HELP = (By.XPATH, "//a[contains(@href, 'ref_=nav_cs_help')]")
 NAVIG_LINK_ORDERS = (By.ID, "nav-orders")
 NAVIG_LINK_ACCOUNTS_AND_LISTS = (By.CSS_SELECTOR, "a#nav-link-accountList")
 NAVIG_LINK_CART = (By.ID, "nav-cart")
-NAVIG_LANG_EN = (By.ID, "icp-nav-flyout")
+NAVIG_LINK_LANG_EN = (By.ID, "icp-nav-flyout")
+NAVIG_LINK_TRY_PRIME = (By.ID, "nav-link-prime")
+
 
 HAMBURGER_MENU = (By.XPATH, "//i[@class='hm-icon nav-sprite']")
 SHOP_BY_CATEGORY_HEADER = (By.XPATH, "//ul[@class='hmenu  hmenu-visible']/li[1]/div[@class='hmenu-item hmenu-title']")
@@ -90,3 +92,17 @@ def hover_accounts_lists(context):
     link = context.driver.find_element(*NAVIG_LINK_ACCOUNTS_AND_LISTS)
     a = ActionChains(context.driver)
     a.move_to_element(link).perform() # Moving the mouse to the middle of an element
+
+
+@when("Hover over navig Lang link")
+def hover_navig_lang(context):
+    link = context.driver.find_element(*NAVIG_LINK_LANG_EN)
+    a = ActionChains(context.driver)
+    a.move_to_element(link).perform()
+
+
+@when("Hover over navig 'Try Prime' link")
+def hover_navig_try_prime(context):
+    link = context.driver.find_element(*NAVIG_LINK_TRY_PRIME)
+    a = ActionChains(context.driver)
+    a.move_to_element(link).perform()

@@ -2,12 +2,14 @@ from selenium.webdriver.common.by import By
 from behave import given, when, then
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
+from selenium.webdriver.common.action_chains import ActionChains
 
 
 NAVIG_LINK_HELP = (By.XPATH, "//a[contains(@href, 'ref_=nav_cs_help')]")
 NAVIG_LINK_ORDERS = (By.ID, "nav-orders")
 NAVIG_LINK_ACCOUNTS_AND_LISTS = (By.CSS_SELECTOR, "a#nav-link-accountList")
 NAVIG_LINK_CART = (By.ID, "nav-cart")
+NAVIG_LANG_EN = (By.ID, "icp-nav-flyout")
 
 HAMBURGER_MENU = (By.XPATH, "//i[@class='hm-icon nav-sprite']")
 SHOP_BY_CATEGORY_HEADER = (By.XPATH, "//ul[@class='hmenu  hmenu-visible']/li[1]/div[@class='hmenu-item hmenu-title']")
@@ -81,3 +83,10 @@ def click_account_and_list_navig_link(context):
 @when("Click on Cart icon")
 def click_navig_cart_icon(context):
     context.driver.find_element(*NAVIG_LINK_CART).click()
+
+
+@when('Hover over Account&Lists link')
+def hover_accounts_lists(context):
+    link = context.driver.find_element(*NAVIG_LINK_ACCOUNTS_AND_LISTS)
+    a = ActionChains(context.driver)
+    a.move_to_element(link).perform() # Moving the mouse to the middle of an element

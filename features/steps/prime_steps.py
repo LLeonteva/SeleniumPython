@@ -3,7 +3,7 @@ from behave import given, when, then
 
 
 TRY_PRIME_BTN = (By.XPATH, "//input[@class='prime-cta-signup-button-input']")
-PRIME_LOGO = (By.XPATH, "//div[@class='prime-header-logo']")
+PRIME_LOGO = (By.ID, "prime-hero-header")
 BENEFITS_CARD = (By.CSS_SELECTOR, "div.card-category")
 
 

@@ -20,3 +20,4 @@ Feature: Tests using Actions in Home page
     And Click on 'Try Prime' btn
     Then Amazon Prime page is opened
 
+

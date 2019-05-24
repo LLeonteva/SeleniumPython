@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
 from selenium.webdriver.support import expected_conditions as EC
+from time import sleep
 
 
 # =============================== LOCATORS ================================================
@@ -73,3 +74,8 @@ def verify_on_sign_in(context):
 def click_create_acc_btn(context):
     context.driver.wait.until(EC.element_to_be_clickable(CREAT_ACCOUNT_LINK))
     context.driver.find_element(*CREAT_ACCOUNT_LINK).click()
+
+
+@when("Click on Forgot Password link")
+def click_forgot_pw_lnk(context):
+    context.driver.find_element(*FORGOT_PASSWORD_LINK).click()

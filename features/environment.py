@@ -7,12 +7,16 @@ def browser_init(context):
     :param context: Behave context
     :param url: root url of the pages
     """
-    context.driver = webdriver.Chrome('drivers/chromedriver')
+    # context.driver = webdriver.Chrome('drivers/chromedriver')
+    context.driver = webdriver.Firefox(executable_path='drivers/geckodriver')
+    # context.driver = webdriver.Firefox('drivers/geckodriver')
+
     context.url = 'https://www.amazon.com'
+
     # context.browser = webdriver.Safari()
     # context.browser = webdriver.Firefox()
 
-    # context.driver.maximize_window()
+    context.driver.maximize_window()
     context.driver.implicitly_wait(4)
 
     context.driver.wait = WebDriverWait(context.driver, 10)

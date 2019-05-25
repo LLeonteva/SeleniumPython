@@ -9,4 +9,5 @@ SIGN_IN_BTN = (By.ID, "nav-al-signin")
 
 @when("Click on Account&Lists SignIn btn")
 def click_sign_in_btn(context):
+    context.driver.wait.until(EC.element_to_be_clickable(SIGN_IN_BTN))
     context.driver.find_element(*SIGN_IN_BTN).click()
